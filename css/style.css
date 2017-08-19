@@ -1,0 +1,225 @@
+html {
+    height: 100%;
+}
+body {
+    position: relative;
+    min-height: 100%;
+}
+.w3-container {
+	/*margin-top: 10.5vh;*/
+}
+.w3-xxxlarge {
+	font-size: 5vh !important;
+}
+.w3-bar .w3-bar-item {
+	font-size: 3vh;
+}
+footer {
+	display: none;
+}
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 5; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #607d8b; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+.home .w3-card-4{
+    min-height: 80vh;
+    padding-bottom: 10px;
+}
+.home .overview.page-content {
+    text-align: left;
+    display: table;
+    margin: 0 auto;
+}
+.home .view-list.page-content {
+    margin: 2vh 0;
+}
+.home .overview .task-overview .square {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px; 
+}
+.home .chart .pie-wrapper .half-circle {
+    border: 0.1em solid #f44336;
+}
+.home .overview .task-overview.completed .square {
+    background: #f44336;
+}
+.home .overview .task-overview.pending .square {
+    background: #bdc3c7;
+}
+.home .overview .task-overview .num {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -10px;
+    line-height: 20px;
+}
+.page .page-content {
+    /*max-width: 75%;
+    margin: 0 auto;
+    background: #efefef;
+    border: 3px solid #ccc;
+    -webkit-box-shadow: -1px 0px 28px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 28px -6px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 28px -6px rgba(0,0,0,0.75);
+    border-radius: 10px;*/
+    color: #333;
+    text-align: center;
+}
+.list .w3-cell-row {
+    /*border-top: 1px solid #ccc;*/
+    /*border-bottom: 1px solid #ccc;*/
+    margin-bottom: 20px;
+
+}
+.list .w3-cell-row.no-task {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+.list .show-status {
+    font-weight: 600;
+}
+.list .show-completed {
+    color: #8bc34a;
+}
+.list .show-pending {
+    color: #f44336;
+}
+.w3-btn.submit {
+    background: #f44336;
+    color: #fff;
+}
+.add-new textarea {
+    resize: none;
+    min-height: 100px;
+}
+.edit-delete-a-container .task-link {
+    display: inline-block;
+}
+.complete-a-container {
+    margin: 15px 0;
+}
+.task-link a {
+    font-weight: 600;
+    text-decoration: none;
+}
+.task-link a.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: line-through;
+}
+.task-link.edit {
+    margin-right: 15px;
+}
+.task-link.edit a {
+    color: #03A9F4;
+    letter-spacing: 0.25px;
+}
+.task-link.delete a {
+    color: #f44336;
+}
+.task-link.mark a {
+    color: #8bc34a;
+}
+.action {
+    display: inline-block;
+    margin: 15px 0;
+}
+.action.back-action {
+    padding: 8px 16px;
+    vertical-align: middle;
+}
+.action.back-action a {
+    text-decoration: none;
+    color: #f44336;
+}
+div.logo {
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+/*Overlay and loader*/
+.loader {
+    border: 10px solid #666666;
+    border-radius: 50%;
+    border-top: 10px solid #f44336;
+    width: 40px;
+    height: 40px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    z-index: 5;
+    display: none;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.77);
+    z-index: 2;
+    opacity: 0.5;
+    /*margin-top: -10.5vh;*/
+    /*height: calc(100% + 10.5vh);*/
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}

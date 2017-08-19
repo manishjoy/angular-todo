@@ -1,0 +1,57 @@
+<div class="list">
+	<div class="page-content">			
+		<div ng-if="tasks.length > 0">
+			<div class="w3-cell-row w3-card-4">
+				<input class="w3-input w3-border" ng-model="search" id="search" placeholder="Search Tasks" type="text">
+			</div>
+			<div ng-show="(tasks | filter:search).length == 0" class="w3-cell-row w3-card-4" style="text-align: center;">
+				<p>Oops, Nothing Matched</p>
+			</div>
+			<div class="w3-cell-row w3-card-4" ng-repeat="task in tasks | filter: search">
+				<div class="w3-cell w3-container">
+					<h3>{{ task.task }}</h3>
+					<p><strong>Description</strong></p>
+					<p>{{ task.description }}</p>
+					<p><strong>Created At: </strong>{{ task.created_at }}</p>
+					<p><strong>Due Date: </strong>{{ task.due_date }}</p>
+					<p>
+						<strong>Status: </strong>
+						<span class="show-status show-completed" ng-if="task.status == 1">Completed</span>
+						<span class="show-status show-pending" ng-if="task.status == 0">Pending</span>
+					</p>
+					<div ng-if="task.status == 0">
+						<hr>
+						<div class="edit-delete-a-container">
+							<div class="task-link edit"><a href="#form/{{task.id}}">Edit</a></div>
+							<div class="task-link delete"><a href="#list" ng-click="deleteTask(task.id); $event.stopPropagation();">Delete</a></div>
+						</div>
+						<div class="complete-a-container">
+							<div class="task-link mark"><a href="#list" ng-click="markComplete(task.id); $event.stopPropagation();">Mark as complete</a></div>
+						</div>
+					</div>
+					<div ng-if="task.status == 1">
+						<hr>
+						<div class="edit-delete-a-container">
+							<div class="task-link edit"><a class="disabled" href="#form/{{task.id}}">Edit</a></div>
+							<div class="task-link delete"><a href="#list" ng-click="deleteTask(task.id); $event.stopPropagation();">Delete</a></div>
+						</div>
+						<div class="complete-a-container">
+							<div class="task-link mark"><a class="disabled" href="#list" ng-click="markComplete(task.id); $event.stopPropagation();">Mark as complete</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="tasks.length == 0">
+			<div class="w3-cell-row no-task">
+				<div class="w3-cell w3-container">
+					<h3>No Task Found</h3>
+					<div class="action">
+						<a href="#form" class="w3-btn w3-red submit">Add New Task</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

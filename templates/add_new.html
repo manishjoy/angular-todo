@@ -1,0 +1,29 @@
+<div class="add-new">
+	<div class="page-content w3-card-4">
+		<div class="w3-container w3-theme">
+		<h2>Add Task</h2>
+		</div>
+		<form class="w3-container" ng-submit='submitForm()'>
+			<p>      
+				<label class="w3-text-brown"><b>Title</b></label>
+				<input class="w3-input w3-border" name="title" ng-model="title" type="text">
+			</p>
+			<p>      
+				<label class="w3-text-brown"><b>Description</b></label>
+				<textarea class="w3-input w3-border" name="description" ng-model="description"></textarea>
+			</p>
+			<p>
+				<label class="w3-text-brown"><b>Due Date</b></label>
+				<input type="text" id="datepicker" class="w3-input w3-border" name="due_date" ng-model="due_date" />	
+			</p>
+			<div class="action-container">
+				<div class="action">
+					<input type="submit" class="w3-btn w3-red submit" value="Save">
+				</div>
+				<div class="back-action action" ng-if="id">
+					<a href="#list"><< Back</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
